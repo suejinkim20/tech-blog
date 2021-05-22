@@ -8,7 +8,7 @@ const commentData = [
     },
     {
         postId: 2,
-        body: 'Use express-session and sequelize to store a loggedIn variable that sets to true when the user successfully logs in.',
+        body: 'Interesting article.',
         userId: 3,
     },
 ];
