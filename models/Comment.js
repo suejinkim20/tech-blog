@@ -11,6 +11,10 @@ Comment.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        postId: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
         body: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -32,4 +36,4 @@ Comment.init(
     }
 );
 
-module.exports = Post;
+module.exports = Comment;
