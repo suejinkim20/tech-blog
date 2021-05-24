@@ -5,7 +5,10 @@ const { Post, Comment, User } = require('../models/');
 router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll({
-      include: [User],
+      include: [{
+        model: User,
+        attributes: {exclude: ['password']}
+      }],
     });
     const posts = postData.map((post) => post.get({ plain: true }));
     res.render('all-posts', { posts });
@@ -19,17 +22,22 @@ router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
-        User,
+        {
+        model: User,
+        attributes: {exclude: ['password']}
+        },
         {
           model: Comment,
-          include: [User],
+          include: [{
+            model: User,
+            attributes: {exclude: ['password']}
+          }],
         },
       ],
     });
 
     if (postData) {
       const post = postData.get({ plain: true });
-      console.log(post)
       res.render('single-post', { post });
     } else {
       res.status(404).end();

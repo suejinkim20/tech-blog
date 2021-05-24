@@ -1,19 +1,30 @@
 <div class="card">
-    <h2>{{post.title}}</h2>
+    <div class="card-header">
+        <h2>{{post.title}}</h2>
+    </div>
+    <div class="card-body">
         <p>by: {{post.user.username}}</p>
         <p>{{post.createdAt}}</p>
         <p>{{post.body}}</p>
+    </div>
 </div>
+
 <h2>Comments</h2>
-<div class="card">
-    {{#each post.comments as |comment|}}
-    <p>{{comment.body}}</p>
-    <p>by: {{comment.user.username}}</p>
-    {{/each}}
-</div>
+{{!-- {{#if loggedin}} --}}
 <div class="card">
     <form id="new-comment-form">
-        <textarea placeholder="Respond with a comment"></textarea>
-        <button>Submit a comment</button>
+        <textarea class="form-input" name="comment-body" placeholder="Respond with a comment"></textarea>
+        <button class="btn" type="submit" id="submit-comment-btn" value="{{post.id}}">Submit a comment</button>
     </form>
 </div>
+
+
+{{#each post.comments as |comment|}}
+    <div class="card">
+        <p>{{comment.body}}</p>
+        <p>by: {{comment.user.username}}</p>
+        <p>{{comment.createdAt}}
+    </div>
+{{/each}}
+
+<script src="/js/comment.js"></script>
