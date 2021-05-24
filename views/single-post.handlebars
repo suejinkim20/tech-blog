@@ -1,18 +1,19 @@
 <div class="card">
     <h2>{{post.title}}</h2>
         <p>by: {{post.user.username}}</p>
+        <p>{{post.createdAt}}</p>
         <p>{{post.body}}</p>
 </div>
+<h2>Comments</h2>
 <div class="card">
-    <h2>Comments</h2>
     {{#each post.comments as |comment|}}
     <p>{{comment.body}}</p>
     <p>by: {{comment.user.username}}</p>
     {{/each}}
 </div>
 <div class="card">
-    <form>
-        <textarea>Respond with a comment</textarea>
+    <form id="new-comment-form">
+        <textarea placeholder="Respond with a comment"></textarea>
         <button>Submit a comment</button>
     </form>
 </div>
