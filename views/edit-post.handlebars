@@ -5,13 +5,19 @@
         <h2>Edit Your Post</h2>
     </div>
     <div class="card-body">
-        <label class="form-label" for="post-title">Post Title: </label>
-        <textarea class="form-textarea" rows="1">{{post.title}}</textarea>  
+        <form id="edit-post-form">
+            <label class="form-label" for="post-title">Post Title: </label>
+            <textarea class="form-textarea" rows="1" id="edit-post-title">{{post.title}}</textarea>  
 
-        <label class="form-label" for="post-title">Post Content: </label>
-        <textarea class="form-textarea" rows="5">{{post.body}}</textarea>
+            <label class="form-label" for="post-title">Post Content: </label>
+            <textarea class="form-textarea" rows="5" id="edit-post-body">{{post.body}}</textarea>
+            <div class="btn-div">
+                <button class="btn" type="submit">Submit Your Edits</button>
+            </div>
+        </form>
+        <button class="btn" type="click" id="delete-btn" value="{{post.id}}">Delete Your Post</button>
 
-        <button class="btn" type="submit">Submit Your Edits</button>
     </div>
 </div>
 
+<script src="/js/edit.js"
