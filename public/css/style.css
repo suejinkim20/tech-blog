@@ -1,9 +1,9 @@
 :root {
-  --primary: #ccdad1;
-  --secondary: #9caea9;
-  --tertiary: #788585;
-  --light-dark: #6f6866;
-  --dark: #38302e;
+  --primary: #e0fbfc;
+  --secondary: #ee6c4d;
+  --tertiary: #98c1d9;
+  --light-dark: #3d5a80bd;
+  --dark: #3D5A80;
   --border-radius: 0.3rem;
 }
 
@@ -73,10 +73,13 @@ input {
 .btn {
   font-size: 1.3rem;
   text-decoration: none;
-  padding: 6px 5px;
-  width: 100%;
+  padding: 10px 20px;
+  /*width: 50%;*/
   display: block;
-  margin: 5px 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
   border-radius: var(--border-radius);
   color: var(--primary);
   border: none;
@@ -181,7 +184,7 @@ input {
 }
 
 .card-body {
-  padding: 1%;
+  padding: 0 20px;
 }
 
 /* FORM */
@@ -203,6 +206,17 @@ input {
   font-size: 1.2rem;
   border: 2px solid var(--light-dark);
   border-radius: var(--border-radius);
+}
+
+.form-textarea {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-family: sans-serif;
+  line-height: 130%
 }
 
 /* HEIGHT / WIDTH UTILS */

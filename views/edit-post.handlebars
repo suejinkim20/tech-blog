@@ -1,1 +1,17 @@
 <h2>edit-post.handlebars</h2>
+
+<div class="card">
+    <div class="card-header">
+        <h2>Edit Your Post</h2>
+    </div>
+    <div class="card-body">
+        <label class="form-label" for="post-title">Post Title: </label>
+        <textarea class="form-textarea" rows="1">{{post.title}}</textarea>  
+
+        <label class="form-label" for="post-title">Post Content: </label>
+        <textarea class="form-textarea" rows="5">{{post.body}}</textarea>
+
+        <button class="btn" type="submit">Submit Your Edits</button>
+    </div>
+</div>
+

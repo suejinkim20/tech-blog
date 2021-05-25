@@ -21,9 +21,11 @@
 
 {{#each post.comments as |comment|}}
     <div class="card">
-        <p>{{comment.body}}</p>
-        <p>by: {{comment.user.username}}</p>
-        <p>{{comment.createdAt}}
+        <div class="card-body">
+            <p>{{comment.body}}</p>
+            <p>by: {{comment.user.username}}</p>
+            <p>{{comment.createdAt}}</p>
+        </div>
     </div>
 {{/each}}
 
