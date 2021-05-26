@@ -11,6 +11,7 @@ router.post('/', async (req, res) => {
       userId: req.session.userId });
       
     res.json(newPost);
+
   } catch (err) {
     res.status(500).json(err);
   }
@@ -18,17 +19,16 @@ router.post('/', async (req, res) => {
 
 router.put('/:id', async (req, res) => {
   try {
-    const [affectedRows] = await Post.update(req.body, {
+    const updatedPost = await Post.update({
+      title: req.body.title,
+      body: req.body.body,
+    }, 
+    {
       where: {
         id: req.params.id,
       },
     });
-
-    if (affectedRows > 0) {
-      res.status(200).end();
-    } else {
-      res.status(404).end();
-    }
+    res.json(updatedPost)
   } catch (err) {
     res.status(500).json(err);
   }
@@ -36,17 +36,13 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   try {
-    const [affectedRows] = Post.destroy({
+    const deletedPost = Post.destroy({
       where: {
         id: req.params.id,
       },
     });
 
-    if (affectedRows > 0) {
-      res.status(200).end();
-    } else {
-      res.status(404).end();
-    }
+    res.json(deletedPost)
   } catch (err) {
     res.status(500).json(err);
   }

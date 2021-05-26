@@ -15,8 +15,8 @@ const editFormHandler = async function(event) {
       'Content-Type': 'application/json'
     }
   });
-  console.log(postId)
-  //document.location.replace('/dashboard');
+  alert('Post successfully edited')
+  document.location.replace('/dashboard');
 };
 
 const deleteClickHandler = async function() {
@@ -24,13 +24,14 @@ const deleteClickHandler = async function() {
     method: 'DELETE'
   });
 
-  console.log(postId)
+  alert('Post successfully deleted')
   document.location.replace('/dashboard');
 };
 
 document
   .querySelector('#edit-post-form')
   .addEventListener('submit', editFormHandler);
+
 document
   .querySelector('#delete-btn')
   .addEventListener('click', deleteClickHandler);
