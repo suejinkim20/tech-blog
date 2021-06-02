@@ -1,9 +1,8 @@
 const router = require('express').Router();
 const { Post } = require('../models/');
-const { findAll } = require('../models/User');
-const withAuth = require('../utils/auth'); //took out withAuth middleware, but need to put it back in
+const withAuth = require('../utils/auth'); 
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({ where: { userId: req.session.userId} })
     const posts = postData.map((post) => post.get({ plain: true }));
@@ -17,13 +16,13 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/new', (req, res) => {
+router.get('/new', withAuth, (req, res) => {
   res.render('new-post', {
     layout: 'dashboard',
   });
 });
 
-router.get('/edit/:id', async (req, res) => {
+router.get('/edit/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id);
 
