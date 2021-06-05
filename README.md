@@ -1,7 +1,7 @@
 # tech-blog
 
 ## Description
-This is a note-taking application that can be used to write and save notes. This application will use an Express.js back end and will save and retrieve note data from a JSON file.
+This is a a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well. The app is deployed on Heroku and follows the MVC paradigm in its architectural structure, uses Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
 
 ### Functional Elements:
 
@@ -40,20 +40,18 @@ THEN they are signed out of the site
 - WHEN the user is idle on the site for more than a set time
 THEN they are able to view comments but they are prompted to log in again before they can add, update, or delete comments
 
-### Issues
-* Delete button is not yet functioning because delete route has not been added
-* It appears notes cannot be edited after saving
-
 ## Usage
-This application is delpyed through Heroku at the following link: 
+This application is delpyed through Heroku at the following link: https://thawing-scrubland-43977.herokuapp.com/
 
 The page has the following appearance: 
-![Screenshot 1](/images/screenshot1.png)
+![Screenshot 1](./public/images/screenshot1.png)
 
 ## Technologies Used
 
-* Node.js: https://nodejs.org/en/
-
+* Node.js
+* Express
+* Handlebars
+* Sequelize
 
 ## License
 
