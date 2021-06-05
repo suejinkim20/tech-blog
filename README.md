@@ -40,6 +40,9 @@ THEN they are signed out of the site
 - WHEN the user is idle on the site for more than a set time
 THEN they are able to view comments but they are prompted to log in again before they can add, update, or delete comments
 
+### Issues
+- Currently, the option to comment is showing whether you are logged in or not. Ideally, this would only show if you are logged in.
+
 ## Usage
 This application is delpyed through Heroku at the following link: https://thawing-scrubland-43977.herokuapp.com/
 
